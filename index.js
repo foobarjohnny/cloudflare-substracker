@@ -3187,7 +3187,7 @@ const configPage = `
           <h3 class="text-lg font-medium text-gray-900 mb-4">管理员账户</h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label for="adminUsername" class="block text-sm font-medium text-gray-700">用户名 (例如, admin(2025.11.03 21:28:00))</label>
+              <label for="adminUsername" class="block text-sm font-medium text-gray-700">用户名 (例如, admin(2025.11.04 18:28:00))</label>
               <input type="text" id="adminUsername" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             </div>
             <div>
