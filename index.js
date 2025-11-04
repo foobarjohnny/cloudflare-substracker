@@ -1085,7 +1085,7 @@ const adminPage = `
           </div>
           
           <div>
-            <label for="periodUnit" class="block text-sm font-medium text-gray-700 mb-1">周期单位 * xxyaoll</label>
+            <label for="periodUnit" class="block text-sm font-medium text-gray-700 mb-1">周期单位 * xxyao</label>
             <select id="periodUnit" required
               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
               <option value="day">天</option>
@@ -2417,32 +2417,12 @@ const lunarBiz = {
         }
 
         const match = value.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
-
         if (!match) {
-            // 如果不是标准格式，尝试直接解析
-            const parsed = new Date(value);
-            if (!isNaN(parsed.getTime())) {
-              this.selectedDate = parsed;
-              this.currentDate = new Date(parsed);
-              this.render();
-              
-              // 格式化回标准格式
-              const year = parsed.getFullYear();
-              const month = String(parsed.getMonth() + 1).padStart(2, '0');
-              const day = String(parsed.getDate()).padStart(2, '0');
-              this.input.value = year + '-' + month + '-' + day;
-              
-              const event = new Event('change', { bubbles: false });
-              this.input.dispatchEvent(event);
-            } else {
-              console.warn('无法解析的日期格式:', value);
-        }		
-		//if (!match) {
-        //  if (typeof showToast === 'function') {
-        //    showToast('日期格式需为 YYYY-MM-DD', 'warning');
-        //  }
-        //  return;
-        //}
+          if (typeof showToast === 'function') {
+            showToast('日期格式需为 YYYY-MM-DD', 'warning');
+          }
+          return;
+        }
 
         const year = Number(match[1]);
         const month = Number(match[2]);
